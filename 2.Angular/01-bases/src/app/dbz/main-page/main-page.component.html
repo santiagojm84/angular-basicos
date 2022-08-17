@@ -1,0 +1,8 @@
+<h3>Dragon Ball Z</h3>
+<hr />
+
+<div class="row">
+  <!--Paso de parametro a componente hijo-->
+  <app-personajes [personajes]="personajes"></app-personajes>
+  <app-agregar [nuevo]="nuevo" (onNuevoPersonaje)="agregarNuevoPersonaje($event)"></app-agregar>
+</div>
