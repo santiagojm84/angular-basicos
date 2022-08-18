@@ -9,7 +9,7 @@ import { GifsService } from '../services/gifs.service';
 })
 export class ResultadosComponent {
 
-  get Resultados()
+  get resultados()
   {
     return this.gifService.Resultados;
   }
