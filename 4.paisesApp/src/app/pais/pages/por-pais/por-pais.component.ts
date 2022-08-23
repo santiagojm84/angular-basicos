@@ -10,6 +10,7 @@ export class PorPaisComponent {
   hayError:boolean = false;
   paises: Country[] = [];
   mensajeError:string="";
+  placeHolder:string = "Buscar País...";
 
   constructor(private paisService: PaisService) {}
 

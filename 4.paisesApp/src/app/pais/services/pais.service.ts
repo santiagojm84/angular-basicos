@@ -8,12 +8,18 @@ import { Country } from '../interfaces/pais.interface';
 })
 export class PaisService {
 
-  private _servicioURL: string = 'https://restcountries.com/v2/name';
+  private _servicioURL: string = 'https://restcountries.com/v2';
 
   constructor(private http: HttpClient) { }
 
   getPais(nombrePais:string): Observable<Country[]>
   {
-    return this.http.get<Country[]>(`${this._servicioURL}/${nombrePais}`);
+    return this.http.get<Country[]>(`${this._servicioURL}/name/${nombrePais}`);
   }
+
+  getCapital(nombreCapital:string): Observable<Country[]>
+  {
+    return this.http.get<Country[]>(`${this._servicioURL}/capital/${nombreCapital}`);
+  }
+
 }

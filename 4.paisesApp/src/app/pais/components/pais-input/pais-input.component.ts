@@ -10,6 +10,7 @@ import { debounceTime, Subject } from 'rxjs';
 export class PaisInputComponent implements OnInit {
 
   termino:string = "";
+  @Input() placeHolder:string = "";
   @Output() onEnter:EventEmitter<string> = new EventEmitter();
   @Output() onDebounce:EventEmitter<string> = new EventEmitter();
   debouncer: Subject<string> = new Subject();
