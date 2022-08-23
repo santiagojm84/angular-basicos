@@ -7,17 +7,16 @@ import { PaisService } from '../../services/pais.service';
   templateUrl: './por-pais.component.html'}
   )
 export class PorPaisComponent {
-  termino: string = '';
   hayError:boolean = false;
   paises: Country[] = [];
   mensajeError:string="";
 
   constructor(private paisService: PaisService) {}
 
-  buscar() {
-    if (this.termino)
+  buscar(termino:string) {
+    if (termino)
     {
-      this.paisService.getPais(this.termino).subscribe(
+      this.paisService.getPais(termino).subscribe(
         (paises) => 
         {
           this.paises = paises;
@@ -26,7 +25,7 @@ export class PorPaisComponent {
         },
         (err) =>{ 
           this.paises = [];
-          this.mensajeError = `No se encontro Información del país ${this.termino}`;
+          this.mensajeError = `No se encontro Información del país ${termino}`;
           this.hayError = true;
         }
       );
@@ -36,5 +35,11 @@ export class PorPaisComponent {
       this.mensajeError = `No se ha ingresado información a consultar`;
       this.hayError = true;
     }
+  }
+
+  sugerir(termino:string)
+  {
+    this.hayError = false;
+    //TODO Crear sugerencias
   }
 }
