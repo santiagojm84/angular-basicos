@@ -22,4 +22,9 @@ export class PaisService {
     return this.http.get<Country[]>(`${this._servicioURL}/capital/${nombreCapital}`);
   }
 
+  getPaisAlpha(id:string): Observable<Country>
+  {
+    return this.http.get<Country>(`${this._servicioURL}/alpha/${id}`);
+  }
+
 }
