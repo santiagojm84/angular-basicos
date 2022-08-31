@@ -27,4 +27,8 @@ export class PaisService {
     return this.http.get<Country>(`${this._servicioURL}/alpha/${id}`);
   }
 
+  getPaisesRegion(region:string): Observable<Country[]>
+  {
+    return this.http.get<Country[]>(`${this._servicioURL}/regionalbloc/${region}`);
+  }
 }
