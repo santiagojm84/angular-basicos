@@ -14,7 +14,7 @@ export class VerPaisComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private paisService: PaisService
+    paisService: PaisService
   ) {}
 
   ngOnInit(): void {
@@ -24,10 +24,10 @@ export class VerPaisComponent implements OnInit {
   getPaisAlpha() {
     this.activatedRoute.params.subscribe((params) => {
       const paisId = params['idPais'];
-      this.paisService.getPaisAlpha(paisId).subscribe((pais) => {
+      /*this.paisService.getPaisAlpha(paisId).subscribe((pais) => {
         this.pais = pais
         console.log(pais);
-      });
+      });*/
     });
 
     /*this.activatedRoute.params
