@@ -4,43 +4,53 @@ import { PaisService } from '../../services/pais.service';
 
 @Component({
   selector: 'app-por-pais',
-  templateUrl: './por-pais.component.html'}
-  )
+  templateUrl: './por-pais.component.html',
+  styleUrls: ['./por-pais.component.css'],
+})
 export class PorPaisComponent {
-  hayError:boolean = false;
+  hayError: boolean = false;
   paises: Country[] = [];
-  mensajeError:string="";
-  placeHolder:string = "Buscar País...";
+  paisesSugeridos: Country[] = [];
+  mensajeError: string = '';
+  placeHolder: string = 'Buscar País...';
+  termino: string = '';
+  mostrarSugerencias:boolean = false;
 
   constructor(private paisService: PaisService) {}
 
-  buscar(termino:string) {
-    if (termino)
-    {
+  buscar(termino: string) {
+    this.mostrarSugerencias = false;
+    if (termino) {
       this.paisService.getPais(termino).subscribe(
-        (paises) => 
-        {
+        (paises) => {
           this.paises = paises;
           this.paises.sort();
           this.hayError = false;
         },
-        (err) =>{ 
+        (err) => {
           this.paises = [];
           this.mensajeError = `No se encontro Información del país ${termino}`;
           this.hayError = true;
         }
       );
-    }
-    else
-    {
+    } else {
       this.mensajeError = `No se ha ingresado información a consultar`;
       this.hayError = true;
     }
   }
 
-  sugerir(termino:string)
-  {
+  sugerir(termino: string) {
     this.hayError = false;
-    //TODO Crear sugerencias
+    this.termino = termino;
+
+    this.paisService.getPais(termino).subscribe(
+      (paises) => this.paisesSugeridos = paises.splice(0,5),
+      (err) => this.paisesSugeridos = []
+    );
+  }
+
+  buscarSugerido(termino:string)
+  {
+    this.buscar(termino);
   }
 }
