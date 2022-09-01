@@ -1,5 +1,5 @@
 {
-  "name": "5.pipes-app",
+  "name": "prueba-prime-ng",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,7 +18,6 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "font-awesome": "^4.7.0",
     "primeicons": "^5.0.0",
     "primeng": "^14.0.2",
     "rxjs": "~7.5.0",

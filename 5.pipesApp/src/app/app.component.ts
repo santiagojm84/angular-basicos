@@ -1,18 +1,27 @@
 import { Component } from '@angular/core';
+import { PrimeNGConfig, SelectItem } from 'primeng/api';
+import { SelectItemGroup } from 'primeng/api';
+
+interface City {
+  name: string;
+  code: string;
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styles: [
+    `
+      :host ::ng-deep button {
+        margin-right: 0.5em;
+      }
+    `,
+  ],
 })
 export class AppComponent {
+  constructor(private primengConfig: PrimeNGConfig) {}
 
-  nombre: string = 'Alicia';
-  valor: number = 10000;
-  obj = { nombre: 'Daniela'};
-
-  mostrarNombre()
-  {
-    console.log(this.nombre);
+  ngOnInit() {
+    this.primengConfig.ripple = true;
   }
 }

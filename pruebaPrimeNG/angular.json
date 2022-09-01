@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "5.pipesApp": {
+    "pruebaPrimeNG": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/5.pipes-app",
+            "outputPath": "dist/prueba-prime-ng",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "5.pipesApp:build:production"
+              "browserTarget": "pruebaPrimeNG:build:production"
             },
             "development": {
-              "browserTarget": "5.pipesApp:build:development"
+              "browserTarget": "pruebaPrimeNG:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "5.pipesApp:build"
+            "browserTarget": "pruebaPrimeNG:build"
           }
         },
         "test": {
@@ -90,20 +90,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/primeng/resources/themes/saga-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeflex/primeflex.css",
-              "node_modules/primeicons/primeicons.css",
-              "node_modules/@fullcalendar/core/main.css"
+              "src/styles.css"
             ],
             "scripts": []
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
