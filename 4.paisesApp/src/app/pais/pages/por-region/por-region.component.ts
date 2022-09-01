@@ -31,13 +31,16 @@ export class PorRegionComponent implements OnInit {
   ngOnInit(): void {}
 
   activarRegion(region: string) {
-    console.log(region);
-    this.paises = [];
+    if (region === this.regionActiva) {
+      return;
+    }
+
     this.regionActiva = region;
+    this.paises = [];
+
     this.paisService.getPaisesRegion(this.regionActiva).subscribe(
       (paises) => {
         this.paises = paises;
-        console.log(this.paises);
       },
       (err) => {
         this.paises = [];

@@ -1,14 +1,12 @@
-<h2>Por País</h2>
-<hr>
+<div class="animate__animated animate__bounce">
+    <h2>Por País</h2>
+    <hr>
 
-<div class="row">
-    <div class="col">
-        <app-pais-input 
-          [placeHolder]="placeHolder"
-          (onEnter)="buscar($event)"
-          (onDebounce)="sugerir($event)"
-          >
-        </app-pais-input>
+    <div class="row">
+        <div class="col">
+            <app-pais-input [placeHolder]="placeHolder" (onEnter)="buscar($event)" (onDebounce)="sugerir($event)">
+            </app-pais-input>
+        </div>
     </div>
 </div>
 

@@ -1,8 +1,10 @@
-<h2>Ver País</h2>
-<hr>
+<div class="animate__animated animate__bounce">
+  <h2>Ver País</h2>
+  <hr>
 
-<div *ngIf="!pais; else divPais" class="alert alert-info">
-  Espere por favor...
+  <div *ngIf="!pais; else divPais" class="alert alert-info">
+    Espere por favor...
+  </div>
 </div>
 
 <ng-template #divPais>
