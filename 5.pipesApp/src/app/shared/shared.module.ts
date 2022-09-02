@@ -10,7 +10,8 @@ import { MenuComponent } from './menu/menu.component';
     MenuComponent
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
+    PrimeNgModule
   ],
   imports: [
     CommonModule,

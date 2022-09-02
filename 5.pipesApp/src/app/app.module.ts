@@ -9,14 +9,11 @@ import { AppRouterModule } from './app-router.module';
 import { SharedModule } from './shared/shared.module';
 import { VentasModule } from './ventas/ventas.module';
 
-//Modulos primeng
-import { ButtonModule } from 'primeng/button';
-import {CardModule} from 'primeng/card';
-
 // Cambiar el locale de la app
 import localeEs from '@angular/common/locales/es-HN';
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+import { PrimeNgModule } from './prime-ng/prime-ng.module';
 
 registerLocaleData( localeEs );
 registerLocaleData( localeFr );
@@ -30,9 +27,7 @@ registerLocaleData( localeFr );
     BrowserAnimationsModule,
     AppRouterModule,
     SharedModule,
-    VentasModule,
-    ButtonModule,
-    CardModule
+    VentasModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-HN' }
