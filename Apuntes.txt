@@ -1,6 +1,0 @@
-- ng build --prod => Genear archivo de distribución de producción
-- Parametros de entrada componente padre a hijo:
-   <app-agregar [nuevo]="nuevo"></app-agregar>
-   @Input() nuevo: Personaje
-- Netlify: despliegue de aplicacion de angular
-   
