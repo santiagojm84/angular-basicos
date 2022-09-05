@@ -10,10 +10,34 @@
         <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
             Saludos {{nombre}}, es un placer {{genero | i18nSelect: invitacionMapa}} a nuestro evento
         </p-fieldset>
+        <p-button (click)="CambiarPersona()" class="p-button-help" label="Cambiar Persona">
+        </p-button>
     </div>
     <div class="p-col p-md-6">
         <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
-            Content
+            Actualmente {{clientes.length | i18nPlural: clientesMapa}}
+        </p-fieldset>
+        <p-button (click)="BorrarCliente()" class="p-button-help" label="Borrar Cliente">
+        </p-button>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+            <strong>Original</strong>
+            <span *ngFor="let cliente of clientes">
+                {{cliente}}
+            </span>
+            <b>Slice: 0:2</b>
+            <pre>{{clientes | slice:0:2}}</pre>
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+            <ul>
+                <li *ngFor="let item of persona | keyvalue">
+                    {{item | json}} |
+                    {{item.key}} - {{item.value}}
+                </li>
+            </ul>
         </p-fieldset>
     </div>
 </div>
