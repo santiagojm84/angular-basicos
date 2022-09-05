@@ -8,4 +8,12 @@ import { interval } from 'rxjs';
   ]
 })
 export class NoComunesComponent  {
+  nombre:string = 'Carlos';
+  genero:string = 'masculino';
+
+  invitacionMapa = 
+  {
+    'masculino':'invitarlo',
+    'femenino':'invitarla'
+  }
 }

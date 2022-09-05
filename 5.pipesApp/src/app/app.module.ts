@@ -10,7 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { VentasModule } from './ventas/ventas.module';
 
 // Cambiar el locale de la app
-import localeEs from '@angular/common/locales/es-HN';
+import localeEs from '@angular/common/locales/es-CO';
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
@@ -30,7 +30,7 @@ registerLocaleData( localeFr );
     VentasModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'es-HN' }
+    { provide: LOCALE_ID, useValue: 'es-CO' }
   ],
   bootstrap: [AppComponent]
 })
